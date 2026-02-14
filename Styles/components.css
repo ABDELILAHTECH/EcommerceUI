@@ -1,6 +1,7 @@
 header{
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
     align-items: center;
     gap: 10px;
     padding: 10px 0;
@@ -50,13 +51,12 @@ header{
         }
     }
     nav {
-        width: 100%; 
+        min-width: 230px; 
         background-color: chartreuse; 
 
         ul.user-actions{
             display: flex;
             justify-content: space-between;
-            gap: 10PX;
 
             li{
                 padding: 5px 10px;
@@ -75,7 +75,7 @@ header{
 
                 span{
                     color: black;
-                    font-size: var(--fs-lg);
+                    font-size: var(--fs-md);
                     font-weight: 600;
                 }
             
