@@ -1,0 +1,117 @@
+header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 0;
+    .logo{
+        a{
+            color: black;
+            font-weight: 700;
+            font-size: var(--fs-xl);
+        }
+    }
+    search{
+        form{
+            background-color: chartreuse;
+            display:flex;
+            padding: 5px;
+            border: 1px solid ;
+            border-radius: 28px;
+        }
+        input{
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: var(--fs-sm);
+            background-color: transparent;
+        }
+        input:focus{
+            outline: none;
+        }
+        input::placeholder{
+            color: black;
+        }
+        button{
+            border:none;
+            background-color: chartreuse;
+            padding: 5px;
+            border-radius: 28px;
+            cursor: pointer;
+        }
+        button  svg{
+            color:black;
+        }
+        button:hover{
+            background-color: black;
+        }
+        button:hover > svg{
+            color:chartreuse;
+        }
+    }
+    nav {
+        width: 100%; 
+        background-color: chartreuse; 
+
+        ul.user-actions{
+            display: flex;
+            justify-content: space-between;
+            gap: 10PX;
+
+            li{
+                padding: 5px 10px;
+                transition:0.3s ease;
+            }
+            li:hover{
+                background-color: black;
+            }
+            li:hover svg,li:hover span{
+                color: chartreuse;
+            }
+            .log-in{
+                display: flex;
+                align-items: center;
+                gap: 5PX;
+
+                span{
+                    color: black;
+                    font-size: var(--fs-lg);
+                    font-weight: 600;
+                }
+            
+            }
+        }
+    }
+    
+}
+
+@media  (min-width: var(--mobile)) {
+    .logo{
+        font-size: 1.5rem;
+    }
+    
+}
+@media  (min-width: var(--tablet)) {
+    .logo{
+        font-size: 2rem;
+    }
+    
+}
+@media  (min-width: var(--laptop)) {
+    .logo{
+        font-size: 2.5rem;
+    }
+    
+}
+@media  (min-width: var(--desktop)) {
+    .logo{
+        font-size: 3rem;
+    }
+    
+}
+@media  (min-width: var(--large)) {
+    .logo{
+        font-size: 3.5rem;
+    }
+    
+}
