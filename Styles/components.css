@@ -1,65 +1,64 @@
 header{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
+    background-color: wheat;
+    display: grid;
+    grid-template: 
+    'logo user-nav'
+    'search search';
     gap: 10px;
-    padding: 10px 0;
+    padding: 10px;
     .logo{
+        grid-area: logo;
         a{
-            color: black;
-            font-weight: 700;
-            font-size: var(--fs-xl);
+            svg{
+                color: var(--color-primary);
+            }
         }
     }
     search{
+        grid-area: search;
         form{
-            background-color: chartreuse;
             display:flex;
             padding: 5px;
             border: 1px solid ;
             border-radius: 28px;
-        }
-        input{
-            color: white;
+
+            input{
+            flex: 1;
             border: none;
-            padding: 10px;
+            padding: 5px;
             font-size: var(--fs-sm);
             background-color: transparent;
+               
+               &:focus{
+                outline: none;
+               }
+               &::placeholder{
+                color: black;
+               } 
+            }
+            
+            button{
+               display: flex;
+               align-items: center;
+               border:none;
+               background-color: transparent
+               ;
+               padding-left: 5px;
+               cursor: pointer;
+            }
+       
         }
-        input:focus{
-            outline: none;
-        }
-        input::placeholder{
-            color: black;
-        }
-        button{
-            border:none;
-            background-color: chartreuse;
-            padding: 5px;
-            border-radius: 28px;
-            cursor: pointer;
-        }
-        button  svg{
-            color:black;
-        }
-        button:hover{
-            background-color: black;
-        }
-        button:hover > svg{
-            color:chartreuse;
-        }
+        
+        
     }
     nav {
-        min-width: 230px; 
-        background-color: chartreuse; 
-
+        grid-area: user-nav; 
         ul.user-actions{
             display: flex;
-            justify-content: space-between;
+            justify-content: end;
+            gap: 10px;
 
             li{
-                padding: 5px 10px;
                 transition:0.3s ease;
             }
             li:hover{
@@ -75,7 +74,7 @@ header{
 
                 span{
                     color: black;
-                    font-size: var(--fs-md);
+                    font-size: var(--fs-sm);
                     font-weight: 600;
                 }
             
@@ -85,33 +84,29 @@ header{
     
 }
 
-@media  (min-width: var(--mobile)) {
-    .logo{
-        font-size: 1.5rem;
+
+@media (min-width: 576px) {
+    header{
+        padding: 10px 30px;
+       
+    }
+}
+@media  (min-width: 768px) {
+   header{
+        gap: 30px;
+        grid-template: "logo search user-nav";
+        grid-template-columns: 1fr 10fr; 
+        justify-content: space-between;
+        align-items: center;
     }
     
 }
-@media  (min-width: var(--tablet)) {
-    .logo{
-        font-size: 2rem;
-    }
+@media  (min-width: 992px) {
+   
+}
+@media  (min-width: 1200px) {
     
 }
-@media  (min-width: var(--laptop)) {
-    .logo{
-        font-size: 2.5rem;
-    }
-    
-}
-@media  (min-width: var(--desktop)) {
-    .logo{
-        font-size: 3rem;
-    }
-    
-}
-@media  (min-width: var(--large)) {
-    .logo{
-        font-size: 3.5rem;
-    }
-    
+@media  (min-width: 1400px) {
+   
 }
